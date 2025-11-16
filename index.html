@@ -1,18 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince VCF Gain</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince VCF Gain</title>
+
+<style>
+    body {
+        background: linear-gradient(180deg,#4A0072,#31004E);
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+        color: #FFD428;
+        margin-top: 10px;
+    }
+
+    .subtitle {
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
+
+    /* SUCCESS BOX */
+    .success-container {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .success-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 18px;
+        border-radius: 12px;
+        margin: 20px 0;
+        backdrop-filter: blur(4px);
+    }
+
+    .success-text {
+        color: #4dff4d;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .success-icon {
+        font-size: 90px;
+        font-weight: bold;
+        color: #4dff4d;
+        margin-top: 15px;
+    }
+
+    /* Stats */
+    .stats {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .stat-box {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 12px;
+        border-radius: 12px;
+        width: 90px;
+    }
+
+    /* Progress */
+    .progress-label {
+        margin-top: 18px;
+        font-weight: bold;
+    }
+
+    .progress-bar {
+        width: 100%;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50px;
+        height: 15px;
+        margin-top: 7px;
+    }
+
+    .progress {
+        width: 67%;
+        height: 100%;
+        background: #FFD428;
+        border-radius: 50px;
+    }
+
+    /* WhatsApp Section */
+    .info-box {
+        margin-top: 22px;
+        padding: 18px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 12px;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #FFD428;
+        color: #33005A;
+        font-weight: bold;
+        padding: 12px 16px;
+        border-radius: 10px;
+        margin-top: 10px;
+        text-decoration: none;
+    }
+
+    .note {
+        margin-top: 12px;
+        opacity: 0.9;
+        font-size: 14px;
+    }
+</style>
+
 </head>
 <body>
 
 <div class="container">
+
     <h1>Prince VCF Gain</h1>
     <p class="subtitle">Create & Share Global Contacts Instantly</p>
 
-    <!-- Success Message -->
+    <!-- SUCCESS MESSAGE -->
     <div class="success-container">
         <div class="success-box">
             <h2 class="success-text">
@@ -22,7 +137,7 @@
         </div>
     </div>
 
-    <!-- Stats Section -->
+    <!-- Stats -->
     <div class="stats">
         <div class="stat-box">
             <h3 id="current">678</h3>
@@ -38,11 +153,13 @@
         </div>
     </div>
 
-    <p class="progress-label">Progress to Unlock: <span id="progress-percentage">67%</span></p>
+    <p class="progress-label">Progress to Unlock: <span id="progress-percent">67%</span></p>
+
     <div class="progress-bar">
         <div id="progress" class="progress"></div>
     </div>
 
+    <!-- Info Box -->
     <div class="info-box">
         <p>VCF file will be released in our WhatsApp channel once we reach 1000 contacts</p>
 
@@ -51,14 +168,23 @@
         </a>
 
         <p class="note">
-        NB: FAILURE TO FOLLOW THE CHANNEL,
-        YOU WILL MISS THE VCF FILE AND YOU
-        WILL MISS THE VIEWS TOO
+            NB: FAILURE TO FOLLOW THE CHANNEL, YOU WILL MISS THE VCF FILE AND YOU WILL MISS THE VIEWS TOO
         </p>
     </div>
-
 </div>
 
-<script src="script.js"></script>
+<script>
+    // progress calculation logic
+    const current = 678;
+    const target = 1000;
+    const remaining = target - current;
+    
+    document.getElementById("remaining").textContent = remaining;
+    const progress = Math.round((current / target) * 100);
+    
+    document.getElementById("progress-percent").textContent = progress + "%";
+    document.getElementById("progress").style.width = progress + "%";
+</script>
+
 </body>
 </html>
