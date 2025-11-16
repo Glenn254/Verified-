@@ -1,77 +1,108 @@
-/* General page styling */
+/* ORIGINAL DESIGN COLORS & STYLE REMAIN THE SAME */
 body {
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: #fff;
-  margin: 0;
-  padding: 0;
+    background: #36006B;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header section */
-header {
-  background: #111;
-  text-align: center;
-  padding: 15px 0;
-  border-bottom: 2px solid #0ff;
+.container {
+    padding: 20px;
 }
 
 h1 {
-  color: #0ff;
-  margin: 0;
+    font-size: 32px;
+    color: #FFD428;
 }
 
-/* Dashboard summary cards */
-.dashboard {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
+.subtitle {
+    opacity: 0.8;
 }
 
-.card {
-  background: #1b1b1b;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 30%;
+/* NEW SUCCESS BOX */
+.success-container {
+    text-align: center;
+    padding: 20px;
 }
 
-.card h3 {
-  color: #0ff;
+.success-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 18px;
+    border-radius: 12px;
+    margin: 20px 0;
+    backdrop-filter: blur(4px);
 }
 
-/* New order form and orders table */
-.new-order,
-.orders-list {
-  background: #1b1b1b;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
+.success-text {
+    color: #4dff4d;
+    font-size: 17px;
+    font-weight: 600;
 }
 
-input, select, button {
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
+.success-icon {
+    font-size: 85px;
+    font-weight: bold;
+    color: #4dff4d;
+    margin-top: 15px;
 }
 
-button {
-  background: #0ff;
-  color: #000;
-  cursor: pointer;
-  font-weight: bold;
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-/* Table styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    width: 90px;
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #333;
-  text-align: left;
+.progress-label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50px;
+    height: 14px;
+    margin-top: 8px;
+}
+
+.progress {
+    width: 67%;
+    height: 100%;
+    background: #FFD428;
+    border-radius: 50px;
+}
+
+/* Button + Info */
+.info-box {
+    margin-top: 20px;
+    padding: 18px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+}
+
+.btn {
+    display: inline-block;
+    background: #FFD428;
+    color: #3a005a;
+    font-weight: bold;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.note {
+    margin-top: 10px;
+    opacity: 0.9;
 }
